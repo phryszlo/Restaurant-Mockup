@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "Diatype";
+  src: url(./fonts/CargoDiatype-Regular.woff2);
+}
+@font-face {
+  font-family: "SFMonoRegular";
+  src: url(./fonts/SFMonoRegular.woff);
+}
+
+.icon-link.soundcloud {
+  transform: translate(-0.06em, -0.075em);
+}
+
+[data-id="19147043"] .page_content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* my add */
+.page_content h1 {
+  font-family: 'Diatype';
+  font-size: 196px;
+}
+.nav-side {
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  flex: 1;
+  margin-left: -2px;
+}
+
+.nav-side.right {
+  text-align: right;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: -2px;
+}
+
+.nav-side a {
+  padding: 1rem 0 !important;
+  line-height: 1;
+  margin: 0;
+}
+.nav-side a.auth-login {
+  display: inline-block;
+  padding: 1rem 0 1rem 2rem !important;
+  position: relative;
+}
+
+.nav-side a.auth-login svg {
+  transform: translate(0.1em, 0.6em);
+  height: 1.7rem !important;
+  width: auto !important;
+  display: inline-block;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.social-icons {
+  font-size: 1.5rem;
+}
+.nav-side.social-icons a {
+  padding: 0 0 0.75rem 0 !important;
+}
+
+.nav {
+  --radius1: 5px;
+  --radius2: 10px;
+  --radius3: 1rem;
+  --nav-pad-x: 0.85rem;
+  --nav-pad-y: 1.75rem;
+  --nav-pad-x-increase: 1.05rem;
+
+  --red: #ff0000;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+  font-family: "SFMonoRegular", monospace;
+}
+
+.bar {
+  z-index: 9999;
+  border: 1px solid red;
+  border-bottom: 0;
+  border-radius: 1rem 1rem 0 0;
+  height: 1.5rem;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.nav a {
+  padding: var(--nav-pad-x) var(--nav-pad-y) !important;
+  border: 1px solid var(--red);
+  border-bottom: 0;
+  margin: 0;
+  border-radius: var(--radius1) var(--radius1) 0 0;
+  line-height: 1;
+  min-width: 12rem;
+  position: relative;
+  /* my adds */
+  text-decoration: none;
+}
+
+body.homepage .nav a[rel="home_page"],
+[data-bodyview] .page .nav a.active {
+  border-bottom: 0 !important;
+  padding: var(--nav-pad-x-increase) var(--nav-pad-y) !important;
+}
+
+body.homepage .nav a[rel="home_page"]:active,
+[data-bodyview] .page .nav a.active:active {
+  opacity: 1 !important;
+}
+
+body.homepage .nav a[rel="home_page"]:after,
+[data-bodyview] .page .nav a.active:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  background: white;
+  height: 1px;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.nav a + a {
+  margin-left: -1px !important;
+}
+
+/* First Button */
+.nav a:first-child {
+  border-radius: var(--radius2) var(--radius1) 0 0;
+}
+.nav a.adjacent-left:first-child {
+  border-radius: var(--radius2) 0 0 0 !important;
+}
+body.homepage .nav a[rel="home_page"]:first-child,
+body.homepage .nav a[rel="home_page"].active {
+  border-radius: var(--radius2) 0 0 0 !important;
+}
+body.homepage .nav a[rel="home_page"] + a {
+  border-radius: 0 var(--radius1) 0 0 !important;
+}
+
+/* last Button */
+.nav a:last-child {
+  border-radius: var(--radius1) var(--radius2) 0 0 !important;
+}
+.nav a.active:last-child,
+.nav a.adjacent-right:last-child {
+  border-radius: 0 var(--radius2) 0 0 !important;
+}
+
+/* adjacents */
+.nav a.adjacent-left {
+  border-radius: var(--radius1) 0 0 0 !important;
+}
+.nav a.adjacent-right {
+  border-radius: 0 var(--radius1) 0 0 !important;
+}
+.nav a.active {
+  border-radius: var(--radius1) var(--radius1) 0 0 !important;
+}
+
+.nav .bolt {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  width: auto !important;
+  height: 1.6rem;
+  transform: translate(50%, -50%);
+}
+
+.top-nav {
+  --nav-pad-y: 0.25rem;
+}
+
+.top-nav .nav a {
+  min-width: 11rem !important;
+}
