@@ -6,9 +6,27 @@
   font-family: "SFMonoRegular";
   src: url(./fonts/SFMonoRegular.woff);
 }
+@font-face {
+  font-display: block;
+  font-family: "Arizona Sans Variable";
+  src: url("https://type.cargo.site/files/CargoArizonaPlusVariable.woff2") format("woff2-variations"),
+    url("https://type.cargo.site/files/CargoArizonaPlusVariable.woff") format("woff");
+  font-style: normal;
+  font-weight: 200 700;
+  unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+@font-face {
+  font-display: block;
+  font-family: "Arizona Sans Variable";
+  src: url("https://type.cargo.site/files/CargoArizonaPlusItalicVariable.woff2") format("woff2-variations"),
+    url("https://type.cargo.site/files/CargoArizonaPlusItalicVariable.woff") format("woff");
+  font-style: italic;
+  font-weight: 200 700;
+  unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
 
 .icon-link.soundcloud {
-  transform: translate(-0.06em, -0.075em);
+  transform: translate(-0.06em, 0.175em);
 }
 
 [data-id="19147043"] .page_content {
@@ -21,7 +39,10 @@
 .page_content h1 {
   font-family: 'Diatype';
   font-size: 196px;
+  color: #ff0000;
+  margin-top: 0;
 }
+
 .nav-side {
   display: flex;
   align-items: flex-end;
@@ -38,7 +59,7 @@
 }
 
 .nav-side a {
-  padding: 1rem 0 !important;
+  padding: .1rem 0 !important;
   line-height: 1;
   margin: 0;
 }
@@ -51,7 +72,7 @@
 .nav-side a.auth-login svg {
   transform: translate(0.1em, 0.6em);
   height: 1.7rem !important;
-  width: auto !important;
+  /* width: auto !important; */
   display: inline-block;
   line-height: 0;
   position: absolute;
@@ -61,6 +82,11 @@
 
 .social-icons {
   font-size: 1.5rem;
+  position: relative;
+  width: 5%;
+
+  /* my adds */
+  margin-bottom: -50px;
 }
 .nav-side.social-icons a {
   padding: 0 0 0.75rem 0 !important;
@@ -79,18 +105,13 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   font-family: "SFMonoRegular", monospace;
-}
 
-.bar {
-  z-index: 9999;
-  border: 1px solid red;
-  border-bottom: 0;
-  border-radius: 1rem 1rem 0 0;
-  height: 1.5rem;
-  flex-grow: 1;
-  width: 100%;
+  /* my adds */
+  margin-top: 5em;
+  margin: 0 30vw;
+  width: 200px;
 }
 
 .nav a {
@@ -100,11 +121,31 @@
   margin: 0;
   border-radius: var(--radius1) var(--radius1) 0 0;
   line-height: 1;
-  min-width: 12rem;
   position: relative;
   /* my adds */
   text-decoration: none;
+  width: fit-content;
+  font-size: 12px;
+  color: var(--red);
+  white-space: nowrap;
 }
+
+
+.bar {
+  z-index: 9999;
+  border: 1px solid red;
+  border-bottom: 0;
+  border-radius: 1rem 1rem 0 0;
+  height: 1.5rem;
+  flex-grow: 1;
+  width: 100%;
+
+  /* my adds */
+  /* padding: 0 5em; */
+  /* margin: 0; */
+}
+
+
 
 body.homepage .nav a[rel="home_page"],
 [data-bodyview] .page .nav a.active {
