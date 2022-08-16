@@ -29,18 +29,12 @@
   transform: translate(-0.06em, 0.175em);
 }
 
-/* this div contains .nav-side, .nav, and .nav-side.right  */
-[data-id="19147043"] .page_content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+
 
 /* my adds */
 /* it's too many -content classes, hard to read */
 .tab-content {
-  border: solid deeppink;
+  border: .2px solid deeppink;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,21 +62,17 @@
 }
 
 
-/* individual content tab main content (grids e.g.) goes in this */
-.content-content {
-  border: solid black;
-  width: 90vw;
-  min-height: 500px;
-}
+
 
 /* .home-content is specific to first tab */
 .home-content img, h1 {
   display: inline;
 }
 .home-content img {
+  display: inline;
   padding-left: 200px;
   position: relative;
-  top: 150px;
+  /* top: 150px; */
 }
 
 
@@ -96,21 +86,54 @@
 .sites {
   color: #ff0000;
   font-family: 'SFMonoRegular', monospace;
-  font-size: smaller;
+  font-size: 17px;
 }
 /* tilt the sites! header */
-.sites h1 {
+.tab-top-content h1 {
   color: #ff0000;
   font-size: 216px;
   font-style: italic;
   display: block; /* it won't transform without this*/
+}
+.sites h1 {
   transform: rotate(-0.01turn) translateX(-120px) scale(125%);
+
+}
+
+
+/* individual content tab main content (grids e.g.) goes in this */
+.content-content {
+  display: flex;
+  flex-wrap: wrap;
+  border: .2px solid black;
+  width: 90vw;
+  /* min-height: 500px; */
+}
+
+.content-card {
+  padding: 8px;
+  margin: 1em;
+  border: 1px solid #ff0000;
+  border-radius: 20px;
+}
+.content-card img {
+  padding: 8px;
+  border: 1px solid #ff0000;
+  width: 28em;
 }
 
 
 
 
+/* this div contains .nav-side, .nav, and .nav-side.right  */
+[data-id="19147043"] .nav-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
+  /* border: 5px solid green; */
+}
 
 .nav-side {
   display: flex;
@@ -118,6 +141,7 @@
   text-align: left;
   flex: 1;
   margin-left: -2px;
+  /* border: solid purple; */
 }
 
 .nav-side.right {
@@ -126,6 +150,8 @@
   justify-content: flex-end;
   margin-right: -2px;
   width: 100px;
+
+  /* border: solid blue; */
 }
 
 .nav-side a {
@@ -222,8 +248,13 @@
 
 /* my-add */
 .nav a.active {
+  z-index: 9999;
+  background: white;
+  border-bottom: none;
   padding: var(--nav-pad-x-increase) var(--nav-pad-y) !important;
-
+  padding-bottom: 50px;
+  position: relative;
+  /* height: 100%; */
 }
 
 body.homepage .nav a[rel="home_page"],
