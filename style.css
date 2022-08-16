@@ -29,19 +29,88 @@
   transform: translate(-0.06em, 0.175em);
 }
 
+/* this div contains .nav-side, .nav, and .nav-side.right  */
 [data-id="19147043"] .page_content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-/* my add */
-.page_content h1 {
+/* my adds */
+/* it's too many -content classes, hard to read */
+.tab-content {
+  border: solid deeppink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab-top-content {
+  text-align: center;
+  margin: auto;
+}
+
+.page-content {
+  width: 90vw;
+}
+.page-content h1 {
+  display: block;
   font-family: 'Diatype';
   font-size: 196px;
   color: #ff0000;
   margin-top: 0;
 }
+.page-content > div {
+  margin: auto;
+}
+[data-target="home"] svg {
+  margin-right: 10px;
+}
+
+
+/* individual content tab main content (grids e.g.) goes in this */
+.content-content {
+  border: solid black;
+  width: 90vw;
+  min-height: 500px;
+}
+
+/* .home-content is specific to first tab */
+.home-content img, h1 {
+  display: inline;
+}
+.home-content img {
+  padding-left: 200px;
+  position: relative;
+  top: 150px;
+}
+
+
+/* classes to show chosen tab content and hide others */
+.invisible {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.sites {
+  color: #ff0000;
+  font-family: 'SFMonoRegular', monospace;
+  font-size: smaller;
+}
+/* tilt the sites! header */
+.sites h1 {
+  color: #ff0000;
+  font-size: 216px;
+  font-style: italic;
+  display: block; /* it won't transform without this*/
+  transform: rotate(-0.01turn) translateX(-120px) scale(125%);
+}
+
+
+
+
+
 
 .nav-side {
   display: flex;
@@ -56,6 +125,7 @@
   align-items: flex-end;
   justify-content: flex-end;
   margin-right: -2px;
+  width: 100px;
 }
 
 .nav-side a {
@@ -82,11 +152,12 @@
 
 .social-icons {
   font-size: 1.5rem;
-  position: relative;
-  width: 5%;
+  /* position: relative; */
+  width: 5vw;
 
   /* my adds */
-  margin-bottom: -50px;
+  /* margin-bottom: 50px; */
+  /* border: solid black; */
 }
 .nav-side.social-icons a {
   padding: 0 0 0.75rem 0 !important;
@@ -98,7 +169,7 @@
   --radius3: 1rem;
   --nav-pad-x: 0.85rem;
   --nav-pad-y: 1.75rem;
-  --nav-pad-x-increase: 1.05rem;
+  --nav-pad-x-increase: 1.15rem;
 
   --red: #ff0000;
 
@@ -111,7 +182,11 @@
   /* my adds */
   margin-top: 5em;
   margin: 0 30vw;
-  width: 200px;
+
+  /* this width forces the width of the .nav-sides.
+    i'm not sure why i can't size the .nav-sides by themselves
+    but no width / flex-justification for them changes anything */
+  width: 700px;
 }
 
 .nav a {
@@ -125,7 +200,7 @@
   /* my adds */
   text-decoration: none;
   width: fit-content;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--red);
   white-space: nowrap;
 }
@@ -145,12 +220,17 @@
   /* margin: 0; */
 }
 
+/* my-add */
+.nav a.active {
+  padding: var(--nav-pad-x-increase) var(--nav-pad-y) !important;
 
+}
 
 body.homepage .nav a[rel="home_page"],
 [data-bodyview] .page .nav a.active {
   border-bottom: 0 !important;
   padding: var(--nav-pad-x-increase) var(--nav-pad-y) !important;
+  
 }
 
 body.homepage .nav a[rel="home_page"]:active,
